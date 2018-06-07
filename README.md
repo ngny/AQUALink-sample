@@ -129,32 +129,45 @@ Request
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <SendResults xmlns="http://www.ngnydevices.tech/aqualis/3-0">
-         <ClientId>pDbQv</ClientId>
+         <ClientId>QOvaS</ClientId>
          <ProcessedPrimaryTube>
-            <Id>BQYux</Id>
+            <Id>cfqIO</Id>
             <Status>Failure</Status>
             <Location>
-               <RackId>iXXVy</RackId>
-               <HoleId>tGCxz</HoleId>
+               <RackId>OmaaJ</RackId>
+               <HoleId>xkyvR</HoleId>
             </Location>
             <VisualAnalysis>
                <Width>0.7231742029971469</Width>
                <Height>0.9908988967772393</Height>
                <VolumeEstimation>0.25329310557439133</VolumeEstimation>
-               <CapType>Vllpg</CapType>
-               <HValue>TJKhR</HValue>
-               <IValue>Qqqsz</IValue>
-               <LValue>YLYdv</LValue>
-               <PictureUrl>DhtAs</PictureUrl>
+               <CapType>nLRYt</CapType>
+               <HValue>GKbgi</HValue>
+               <IValue>cZaHC</IValue>
+               <LValue>BRQDS</LValue>
+               <PictureUrl>xVLhp</PictureUrl>
             </VisualAnalysis>
-            <Comment>LghPX</Comment>
+            <Comment>fQGTM</Comment>
          </ProcessedPrimaryTube>
          <TestResults>
             <Test>
-               <Id>Agtbp</Id>
+               <Id>DYpsB</Id>
                <Status>Failure</Status>
             </Test>
+            <Test>
+               <Id>ZxvfB</Id>
+               <Status>Success</Status>
+            </Test>
          </TestResults>
+         <GeneratedSecondaryTubes>
+            <SecondaryTube>
+               <Id>oeygj</Id>
+               <Location />
+               <Comment>bUMaA</Comment>
+               <VolumeMl>0.6088003703785169</VolumeMl>
+               <Status>TubeCheckFailure</Status>
+            </SecondaryTube>
+         </GeneratedSecondaryTubes>
       </SendResults>
    </S:Body>
 </S:Envelope>
