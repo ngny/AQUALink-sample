@@ -74,7 +74,6 @@
             </xs:simpleType>
 
 
-
             <xs:element name="ProcessedPrimaryTube">
                 <xs:complexType>
                     <xs:sequence>
@@ -86,7 +85,6 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
-
 
 
             <xs:simpleType name="TestStatus">
@@ -124,8 +122,6 @@
             </xs:simpleType>
 
 
-
-
             <xs:element name="TestResults">
                 <xs:complexType>
                     <xs:sequence>
@@ -158,28 +154,21 @@
             </xs:simpleType>
 
 
-
-
             <xs:element name="GeneratedSecondaryTubes">
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="SecondaryTubes" maxOccurs="unbounded">
+                        <xs:element name="SecondaryTube" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:sequence>
-                                    <xs:element name="SecondaryTube">
-                                        <xs:complexType>
-                                            <xs:sequence>
-                                                <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                                <xs:element ref="tns:Location" minOccurs="0"/>
-                                                <xs:element name="Comment" type="xs:string"/>
-                                                <xs:element name="VolumeMl" type="xs:double"/>
-                                                <xs:element name="Status" type="tns:SecondaryTubeStatus" minOccurs="1"/>
-                                            </xs:sequence>
-                                        </xs:complexType>
-                                    </xs:element>
+                                    <xs:element name="Id" type="xs:string" minOccurs="1"/>
+                                    <xs:element ref="tns:Location" minOccurs="0"/>
+                                    <xs:element name="Comment" type="xs:string"/>
+                                    <xs:element name="VolumeMl" type="xs:double"/>
+                                    <xs:element name="Status" type="tns:SecondaryTubeStatus" minOccurs="1"/>
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
+
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -210,6 +199,7 @@
                         <xs:element name="ClientId" type="xs:string" minOccurs="1"/>
                         <xs:element ref="tns:ProcessedPrimaryTube" minOccurs="1"/>
                         <xs:element ref="tns:TestResults" minOccurs="1"/>
+                        <xs:element ref="tns:GeneratedSecondaryTubes" minOccurs="0"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
