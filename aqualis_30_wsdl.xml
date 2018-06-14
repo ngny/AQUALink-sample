@@ -161,7 +161,7 @@
                             <xs:complexType>
                                 <xs:sequence>
                                     <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                    <xs:element ref="tns:Location" minOccurs="0"/>
+                                    <xs:element ref="tns:Location" minOccurs="1"/>
                                     <xs:element name="Comment" type="xs:string"/>
                                     <xs:element name="VolumeMl" type="xs:double"/>
                                     <xs:element name="Status" type="tns:SecondaryTubeStatus" minOccurs="1"/>
