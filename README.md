@@ -205,82 +205,46 @@ Request
       <BulkOrder xmlns="http://www.ngnydevices.tech/aqualis/3-0">
          <Sample>
             <BulkPrimaryTube>
-               <Id>rXPZk</Id>
+               <Id>yjCRh</Id>
             </BulkPrimaryTube>
             <Tests>
-               <Test />
+               <Test>
+                  <Id>LTuhn</Id>
+                  <Status>Cancel</Status>
+                  <SecondaryTubeId>TodUe</SecondaryTubeId>
+               </Test>
             </Tests>
             <CustomFields>
-               <CF1>hnfLT</CF1>
-               <CF2>BSXsP</CF2>
-               <CF3>BOxmQ</CF3>
-               <CF4>InyIv</CF4>
-               <CF5>pRgmg</CF5>
-               <CF6>QsYEK</CF6>
-               <CF7>kAAAr</CF7>
-               <CF8>yjCRh</CF8>
-               <CF9>LTuhn</CF9>
-               <CF10>TodUe</CF10>
+               <CF1>wZQqa</CF1>
+               <CF2>ZErUa</CF2>
+               <CF3>ofGvt</CF3>
+               <CF4>hLoyP</CF4>
+               <CF5>LDADY</CF5>
+               <CF6>zxWoa</CF6>
+               <CF7>MAzEE</CF7>
+               <CF8>plqjJ</CF8>
+               <CF9>jNBgp</CF9>
+               <CF10>Tmxxp</CF10>
             </CustomFields>
             <Patient>
-               <Id>wZQqa</Id>
-               <FamilyName>ZErUa</FamilyName>
-               <FirstName>ofGvt</FirstName>
-               <MiddleName>hLoyP</MiddleName>
-               <Sex>LDADY</Sex>
-               <Physician>zxWoa</Physician>
-               <Type>MAzEE</Type>
-               <BirthDate>plqjJ</BirthDate>
+               <Id>IoQMO</Id>
+               <FamilyName>DRhfG</FamilyName>
+               <FirstName>EfXIo</FirstName>
+               <MiddleName>TtOmc</MiddleName>
+               <Sex>BeivN</Sex>
+               <Physician>UYvPB</Physician>
+               <Type>zMiJF</Type>
+               <BirthDate>ouxIL</BirthDate>
             </Patient>
             <SampleSource>
-               <ExtractionCenter>jNBgp</ExtractionCenter>
-               <Service>Tmxxp</Service>
-               <Section>IoQMO</Section>
+               <ExtractionCenter>NvFth</ExtractionCenter>
+               <Service>RIkEg</Service>
+               <Section>EYzhl</Section>
             </SampleSource>
             <Order>
-               <Status>DRhfG</Status>
-               <Priority>EfXIo</Priority>
-               <Id>TtOmc</Id>
-            </Order>
-         </Sample>
-         <Sample>
-            <BulkPrimaryTube>
-               <Id>BeivN</Id>
-            </BulkPrimaryTube>
-            <Tests>
-               <Test />
-            </Tests>
-            <CustomFields>
-               <CF1>UYvPB</CF1>
-               <CF2>zMiJF</CF2>
-               <CF3>ouxIL</CF3>
-               <CF4>NvFth</CF4>
-               <CF5>RIkEg</CF5>
-               <CF6>EYzhl</CF6>
-               <CF7>STPkc</CF7>
-               <CF8>SUyTS</CF8>
-               <CF9>bBkUO</CF9>
-               <CF10>Vdwpr</CF10>
-            </CustomFields>
-            <Patient>
-               <Id>LNbgN</Id>
-               <FamilyName>vZUMp</FamilyName>
-               <FirstName>qAXLJ</FirstName>
-               <MiddleName>bjETi</MiddleName>
-               <Sex>QaUNW</Sex>
-               <Physician>ftniO</Physician>
-               <Type>Aotnz</Type>
-               <BirthDate>WvkQt</BirthDate>
-            </Patient>
-            <SampleSource>
-               <ExtractionCenter>WruzG</ExtractionCenter>
-               <Service>VyIdg</Service>
-               <Section>FUYNd</Section>
-            </SampleSource>
-            <Order>
-               <Status>kFYkk</Status>
-               <Priority>jNIeE</Priority>
-               <Id>Nlreq</Id>
+               <Status>STPkc</Status>
+               <Priority>SUyTS</Priority>
+               <Id>bBkUO</Id>
             </Order>
          </Sample>
       </BulkOrder>
