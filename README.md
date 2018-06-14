@@ -129,43 +129,52 @@ Request
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <SendResults xmlns="http://www.ngnydevices.tech/aqualis/3-0">
-         <ClientId>QOvaS</ClientId>
+         <ClientId>pDbQv</ClientId>
          <ProcessedPrimaryTube>
-            <Id>cfqIO</Id>
+            <Id>BQYux</Id>
             <Status>Failure</Status>
             <Location>
-               <RackId>OmaaJ</RackId>
-               <HoleId>xkyvR</HoleId>
+               <RackId>iXXVy</RackId>
+               <HoleId>tGCxz</HoleId>
             </Location>
             <VisualAnalysis>
                <Width>0.7231742029971469</Width>
                <Height>0.9908988967772393</Height>
                <VolumeEstimation>0.25329310557439133</VolumeEstimation>
-               <CapType>nLRYt</CapType>
-               <HValue>GKbgi</HValue>
-               <IValue>cZaHC</IValue>
-               <LValue>BRQDS</LValue>
-               <PictureUrl>xVLhp</PictureUrl>
+               <CapType>Vllpg</CapType>
+               <HValue>TJKhR</HValue>
+               <IValue>Qqqsz</IValue>
+               <LValue>YLYdv</LValue>
+               <PictureUrl>DhtAs</PictureUrl>
             </VisualAnalysis>
-            <Comment>fQGTM</Comment>
+            <Comment>LghPX</Comment>
          </ProcessedPrimaryTube>
          <TestResults>
             <Test>
-               <Id>DYpsB</Id>
+               <Id>Agtbp</Id>
                <Status>Failure</Status>
-            </Test>
-            <Test>
-               <Id>ZxvfB</Id>
-               <Status>Success</Status>
             </Test>
          </TestResults>
          <GeneratedSecondaryTubes>
             <SecondaryTube>
-               <Id>oeygj</Id>
-               <Location />
-               <Comment>bUMaA</Comment>
+               <Id>rXPZk</Id>
+               <Location1>
+                  <RackId>hnfLT</RackId>
+                  <HoleId>BSXsP</HoleId>
+               </Location1>
+               <Comment>BOxmQ</Comment>
                <VolumeMl>0.6088003703785169</VolumeMl>
                <Status>TubeCheckFailure</Status>
+            </SecondaryTube>
+            <SecondaryTube>
+               <Id>InyIv</Id>
+               <Location1>
+                  <RackId>pRgmg</RackId>
+                  <HoleId>QsYEK</HoleId>
+               </Location1>
+               <Comment>kAAAr</Comment>
+               <VolumeMl>0.8058695140834087</VolumeMl>
+               <Status>DiameterTooHighForOutputHole</Status>
             </SecondaryTube>
          </GeneratedSecondaryTubes>
       </SendResults>
