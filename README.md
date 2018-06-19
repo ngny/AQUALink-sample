@@ -158,10 +158,10 @@ Request
          <GeneratedSecondaryTubes>
             <SecondaryTube>
                <Id>rXPZk</Id>
-               <Location1>
+               <Location>
                   <RackId>hnfLT</RackId>
                   <HoleId>BSXsP</HoleId>
-               </Location1>
+               </Location>
                <Comment>BOxmQ</Comment>
                <VolumeMl>0.6088003703785169</VolumeMl>
                <Status>TubeCheckFailure</Status>
