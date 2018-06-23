@@ -64,6 +64,7 @@ Response
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <GetTestsResponse xmlns="http://www.ngnydevices.tech/aqualis/3-0">
+         <Result>InternalError</Result>
          <PrimaryTube>
             <Id>cfqIO</Id>
             <Location>
@@ -105,7 +106,7 @@ Response
          </CustomFields>
          <Tests>
             <Test>
-               <Id>OinZj</Id>
+               <Id>A25485</Id>
                <Status>Validated</Status>
                <SecondaryTubeId>UfzQh</SecondaryTubeId>
             </Test>
