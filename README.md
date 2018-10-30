@@ -267,8 +267,20 @@ Response
 
 Code to test
 ============
+
+* Get tests
+
 ```
 curl -vv -d '<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header></SOAP-ENV:Header><S:Body><GetTests xmlns="http://www.ngnydevices.tech/aqualis/3-0"><ClientId>aqua7109</ClientId><PrimaryTube><Id>123</Id><Location><RackId></RackId><HoleId></HoleId></Location></PrimaryTube></GetTests></S:Body></S:Envelope>' http://localhost:55555/aqualis/TestPort
+```
+
+
+* Send results
+
+```
+curl -vvv http://10.1.125.136:4500/aqualis/ResultPort -H "Accept: text/xml, multipart/related" -H "Content-Type: text/xml; charset=utf-8" -H "SOAPAction: http://www.ngnydevices.tech/SendResults" -H "User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e" -H "Connection: keep-alive" -d '<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" ><S:Body ><SendResults xmlns="http://www.ngnydevices.tech/aqualis/3-0" ><ClientId>pDbQv</ClientId ><ProcessedPrimaryTube ><Id>BQYux</Id ><Status>Failure</Status ><Location ><RackId>iXXVy</RackId ><HoleId>tGCxz</HoleId ></Location ><VisualAnalysis ><Width>0.7231742029971469</Width ><Height>0.9908988967772393</Height ><VolumeEstimation>0.25329310557439133</VolumeEstimation ><CapType>Vllpg</CapType ><HValue>TJKhR</HValue ><IValue>Qqqsz</IValue ><LValue>YLYdv</LValue ><PictureUrl>DhtAs</PictureUrl ></VisualAnalysis ><Comment>LghPX</Comment ></ProcessedPrimaryTube ><TestResults ><Test ><Id>Agtbp</Id ><Status>Failure</Status ></Test ></TestResults ><GeneratedSecondaryTubes ><SecondaryTube ><Id>rXPZk</Id ><Location ><RackId>hnfLT</RackId ><HoleId>BSXsP</HoleId ></Location ><Comment>BOxmQ</Comment ><VolumeMl>0.6088003703785169</VolumeMl ><Status>TubeCheckFailure</Status ></SecondaryTube ><SecondaryTube ><Id>InyIv</Id ><Location1 ><RackId>pRgmg</RackId ><HoleId>QsYEK</HoleId ></Location1 ><Comment>kAAAr</Comment ><VolumeMl>0.8058695140834087</VolumeMl ><Status>DiameterTooHighForOutputHole</Status ></SecondaryTube ></GeneratedSecondaryTubes ></SendResults ></S:Body></S:Envelope>'
+```
+
 
 
 
