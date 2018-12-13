@@ -271,7 +271,7 @@ Code to test
 * Get tests
 
 ```
-curl -vv -d '<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header></SOAP-ENV:Header><S:Body><GetTests xmlns="http://www.ngnydevices.tech/aqualis/3-0"><ClientId>aqua7109</ClientId><PrimaryTube><Id>123</Id><Location><RackId></RackId><HoleId></HoleId></Location></PrimaryTube></GetTests></S:Body></S:Envelope>' http://localhost:55555/aqualis/TestPort
+curl -vv  -H "Accept: text/xml, multipart/related" -H "Content-Type: text/xml; charset=utf-8" -H "SOAPAction: http://www.ngnydevices.tech/GetTests" -H "User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e" -H "Connection: keep-alive"  -d '<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header></SOAP-ENV:Header><S:Body><GetTests xmlns="http://www.ngnydevices.tech/aqualis/3-0"><ClientId>aqua7109</ClientId><PrimaryTube><Id>123</Id><Location><RackId></RackId><HoleId></HoleId></Location></PrimaryTube></GetTests></S:Body></S:Envelope>' http://localhost:55555/aqualis/TestPort
 ```
 
 
