@@ -64,6 +64,7 @@ Response
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <GetTestsResponse xmlns="http://www.ngnydevices.tech/aqualis/3-0">
+         <Result>InternalError</Result>
          <PrimaryTube>
             <Id>cfqIO</Id>
             <Location>
@@ -105,7 +106,7 @@ Response
          </CustomFields>
          <Tests>
             <Test>
-               <Id>OinZj</Id>
+               <Id>A25485</Id>
                <Status>Validated</Status>
                <SecondaryTubeId>UfzQh</SecondaryTubeId>
             </Test>
@@ -129,43 +130,52 @@ Request
 <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
    <S:Body>
       <SendResults xmlns="http://www.ngnydevices.tech/aqualis/3-0">
-         <ClientId>QOvaS</ClientId>
+         <ClientId>pDbQv</ClientId>
          <ProcessedPrimaryTube>
-            <Id>cfqIO</Id>
+            <Id>BQYux</Id>
             <Status>Failure</Status>
             <Location>
-               <RackId>OmaaJ</RackId>
-               <HoleId>xkyvR</HoleId>
+               <RackId>iXXVy</RackId>
+               <HoleId>tGCxz</HoleId>
             </Location>
             <VisualAnalysis>
                <Width>0.7231742029971469</Width>
                <Height>0.9908988967772393</Height>
                <VolumeEstimation>0.25329310557439133</VolumeEstimation>
-               <CapType>nLRYt</CapType>
-               <HValue>GKbgi</HValue>
-               <IValue>cZaHC</IValue>
-               <LValue>BRQDS</LValue>
-               <PictureUrl>xVLhp</PictureUrl>
+               <CapType>Vllpg</CapType>
+               <HValue>TJKhR</HValue>
+               <IValue>Qqqsz</IValue>
+               <LValue>YLYdv</LValue>
+               <PictureUrl>DhtAs</PictureUrl>
             </VisualAnalysis>
-            <Comment>fQGTM</Comment>
+            <Comment>LghPX</Comment>
          </ProcessedPrimaryTube>
          <TestResults>
             <Test>
-               <Id>DYpsB</Id>
+               <Id>Agtbp</Id>
                <Status>Failure</Status>
-            </Test>
-            <Test>
-               <Id>ZxvfB</Id>
-               <Status>Success</Status>
             </Test>
          </TestResults>
          <GeneratedSecondaryTubes>
             <SecondaryTube>
-               <Id>oeygj</Id>
-               <Location />
-               <Comment>bUMaA</Comment>
+               <Id>rXPZk</Id>
+               <Location>
+                  <RackId>hnfLT</RackId>
+                  <HoleId>BSXsP</HoleId>
+               </Location>
+               <Comment>BOxmQ</Comment>
                <VolumeMl>0.6088003703785169</VolumeMl>
                <Status>TubeCheckFailure</Status>
+            </SecondaryTube>
+            <SecondaryTube>
+               <Id>InyIv</Id>
+               <Location1>
+                  <RackId>pRgmg</RackId>
+                  <HoleId>QsYEK</HoleId>
+               </Location1>
+               <Comment>kAAAr</Comment>
+               <VolumeMl>0.8058695140834087</VolumeMl>
+               <Status>DiameterTooHighForOutputHole</Status>
             </SecondaryTube>
          </GeneratedSecondaryTubes>
       </SendResults>
@@ -196,82 +206,46 @@ Request
       <BulkOrder xmlns="http://www.ngnydevices.tech/aqualis/3-0">
          <Sample>
             <BulkPrimaryTube>
-               <Id>rXPZk</Id>
+               <Id>yjCRh</Id>
             </BulkPrimaryTube>
             <Tests>
-               <Test />
+               <Test>
+                  <Id>LTuhn</Id>
+                  <Status>Cancel</Status>
+                  <SecondaryTubeId>TodUe</SecondaryTubeId>
+               </Test>
             </Tests>
             <CustomFields>
-               <CF1>hnfLT</CF1>
-               <CF2>BSXsP</CF2>
-               <CF3>BOxmQ</CF3>
-               <CF4>InyIv</CF4>
-               <CF5>pRgmg</CF5>
-               <CF6>QsYEK</CF6>
-               <CF7>kAAAr</CF7>
-               <CF8>yjCRh</CF8>
-               <CF9>LTuhn</CF9>
-               <CF10>TodUe</CF10>
+               <CF1>wZQqa</CF1>
+               <CF2>ZErUa</CF2>
+               <CF3>ofGvt</CF3>
+               <CF4>hLoyP</CF4>
+               <CF5>LDADY</CF5>
+               <CF6>zxWoa</CF6>
+               <CF7>MAzEE</CF7>
+               <CF8>plqjJ</CF8>
+               <CF9>jNBgp</CF9>
+               <CF10>Tmxxp</CF10>
             </CustomFields>
             <Patient>
-               <Id>wZQqa</Id>
-               <FamilyName>ZErUa</FamilyName>
-               <FirstName>ofGvt</FirstName>
-               <MiddleName>hLoyP</MiddleName>
-               <Sex>LDADY</Sex>
-               <Physician>zxWoa</Physician>
-               <Type>MAzEE</Type>
-               <BirthDate>plqjJ</BirthDate>
+               <Id>IoQMO</Id>
+               <FamilyName>DRhfG</FamilyName>
+               <FirstName>EfXIo</FirstName>
+               <MiddleName>TtOmc</MiddleName>
+               <Sex>BeivN</Sex>
+               <Physician>UYvPB</Physician>
+               <Type>zMiJF</Type>
+               <BirthDate>ouxIL</BirthDate>
             </Patient>
             <SampleSource>
-               <ExtractionCenter>jNBgp</ExtractionCenter>
-               <Service>Tmxxp</Service>
-               <Section>IoQMO</Section>
+               <ExtractionCenter>NvFth</ExtractionCenter>
+               <Service>RIkEg</Service>
+               <Section>EYzhl</Section>
             </SampleSource>
             <Order>
-               <Status>DRhfG</Status>
-               <Priority>EfXIo</Priority>
-               <Id>TtOmc</Id>
-            </Order>
-         </Sample>
-         <Sample>
-            <BulkPrimaryTube>
-               <Id>BeivN</Id>
-            </BulkPrimaryTube>
-            <Tests>
-               <Test />
-            </Tests>
-            <CustomFields>
-               <CF1>UYvPB</CF1>
-               <CF2>zMiJF</CF2>
-               <CF3>ouxIL</CF3>
-               <CF4>NvFth</CF4>
-               <CF5>RIkEg</CF5>
-               <CF6>EYzhl</CF6>
-               <CF7>STPkc</CF7>
-               <CF8>SUyTS</CF8>
-               <CF9>bBkUO</CF9>
-               <CF10>Vdwpr</CF10>
-            </CustomFields>
-            <Patient>
-               <Id>LNbgN</Id>
-               <FamilyName>vZUMp</FamilyName>
-               <FirstName>qAXLJ</FirstName>
-               <MiddleName>bjETi</MiddleName>
-               <Sex>QaUNW</Sex>
-               <Physician>ftniO</Physician>
-               <Type>Aotnz</Type>
-               <BirthDate>WvkQt</BirthDate>
-            </Patient>
-            <SampleSource>
-               <ExtractionCenter>WruzG</ExtractionCenter>
-               <Service>VyIdg</Service>
-               <Section>FUYNd</Section>
-            </SampleSource>
-            <Order>
-               <Status>kFYkk</Status>
-               <Priority>jNIeE</Priority>
-               <Id>Nlreq</Id>
+               <Status>STPkc</Status>
+               <Priority>SUyTS</Priority>
+               <Id>bBkUO</Id>
             </Order>
          </Sample>
       </BulkOrder>
@@ -290,5 +264,23 @@ Response
    </S:Body>
 </S:Envelope>
 ```
+
+Code to test
+============
+
+* Get tests
+
+```
+curl -vv  -H "Accept: text/xml, multipart/related" -H "Content-Type: text/xml; charset=utf-8" -H "SOAPAction: http://www.ngnydevices.tech/GetTests" -H "User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e" -H "Connection: keep-alive"  -d '<?xml version="1.0" ?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Header></SOAP-ENV:Header><S:Body><GetTests xmlns="http://www.ngnydevices.tech/aqualis/3-0"><ClientId>aqua7109</ClientId><PrimaryTube><Id>123</Id><Location><RackId></RackId><HoleId></HoleId></Location></PrimaryTube></GetTests></S:Body></S:Envelope>' http://localhost:55555/aqualis/TestPort
+```
+
+
+* Send results
+
+```
+curl -vvv http://10.1.125.136:4500/aqualis/ResultPort -H "Accept: text/xml, multipart/related" -H "Content-Type: text/xml; charset=utf-8" -H "SOAPAction: http://www.ngnydevices.tech/SendResults" -H "User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e" -H "Connection: keep-alive" -d '<?xml version="1.0" encoding="UTF-8"?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/" ><S:Body ><SendResults xmlns="http://www.ngnydevices.tech/aqualis/3-0" ><ClientId>pDbQv</ClientId ><ProcessedPrimaryTube ><Id>BQYux</Id ><Status>Failure</Status ><Location ><RackId>iXXVy</RackId ><HoleId>tGCxz</HoleId ></Location ><VisualAnalysis ><Width>0.7231742029971469</Width ><Height>0.9908988967772393</Height ><VolumeEstimation>0.25329310557439133</VolumeEstimation ><CapType>Vllpg</CapType ><HValue>TJKhR</HValue ><IValue>Qqqsz</IValue ><LValue>YLYdv</LValue ><PictureUrl>DhtAs</PictureUrl ></VisualAnalysis ><Comment>LghPX</Comment ></ProcessedPrimaryTube ><TestResults ><Test ><Id>Agtbp</Id ><Status>Failure</Status ></Test ></TestResults ><GeneratedSecondaryTubes ><SecondaryTube ><Id>rXPZk</Id ><Location ><RackId>hnfLT</RackId ><HoleId>BSXsP</HoleId ></Location ><Comment>BOxmQ</Comment ><VolumeMl>0.6088003703785169</VolumeMl ><Status>TubeCheckFailure</Status ></SecondaryTube ><SecondaryTube ><Id>InyIv</Id ><Location1 ><RackId>pRgmg</RackId ><HoleId>QsYEK</HoleId ></Location1 ><Comment>kAAAr</Comment ><VolumeMl>0.8058695140834087</VolumeMl ><Status>DiameterTooHighForOutputHole</Status ></SecondaryTube ></GeneratedSecondaryTubes ></SendResults ></S:Body></S:Envelope>'
+```
+
+
 
 
