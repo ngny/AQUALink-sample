@@ -106,6 +106,12 @@
                                     <xs:element name="Id" type="xs:string" minOccurs="1"/>
                                     <xs:element name="Status" type="tns:TestStatus" minOccurs="1"/>
                                     <xs:element name="SecondaryTubeId" type="xs:string"/>
+                                    <xs:element name="SecondaryDestination" type="xs:string"/>
+                                    <xs:element name="SecondaryName" type="xs:string"/>
+                                    <xs:element name="SecondaryVoluL" type="xs:double"/>
+                                
+                                  
+                                  
                                 </xs:sequence>
                             </xs:complexType>
                         </xs:element>
