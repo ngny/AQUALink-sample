@@ -284,3 +284,22 @@ curl -vvv http://10.1.125.136:4500/aqualis/ResultPort -H "Accept: text/xml, mult
 
 
 
+
+
+Response in the case on nothing to do to a primary tube
+=======================================================
+
+<?xml version="1.0" encoding="UTF-8"?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <GetTestsResponse xmlns="http://www.ngnydevices.tech/aqualis/3-0">
+         <Result>Success</Result>
+         <PrimaryTube>
+            <Id>PRIMARY_TUBE_CODE</Id>
+         </PrimaryTube>
+         <Tests>
+         </Tests>
+      </GetTestsResponse>
+   </S:Body>
+</S:Envelope>
+
