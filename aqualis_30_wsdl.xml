@@ -466,6 +466,63 @@
     </binding>
 
 
+  
+  
+     <xs:element name="PoolSearchResponse">
+ 
+       
+       <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="tns:PrimaryTube" minOccurs="1"/>
+                        <xs:element ref="tns:PoolTube" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+
+            <xs:element name="PoolSearch">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="PrimaryTube" type="xs:string"/>
+                        <xs:element name="PoolTube" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+
+  
+      <message name="SearchPoolRequestMsg">
+        <part name="body" element="tns:PoolSearch"/>
+    </message>
+    <message name="SearchPoolResponseMsg">
+        <part name="body" element="tns:PoolSearchResponse"/>
+    </message>
+
+
+  
+    <portType name="PoolSearchPortType">
+        <operation name="SearchPoolTubes">
+            <input message="tns:SearchPoolRequestMsg"/>
+            <output message="tns:SearchPoolResponseMsg"/>
+        </operation>
+    </portType>
+
+
+      <binding name="PoolSearchBinding" type="tns:PoolSearchPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="SearchPoolTubes">
+            <soap:operation soapAction="http://www.ngnydevices.tech/SearchPoolTubes"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+
+  
+
     <binding name="ResultServiceBinding" type="tns:ResultServicePortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <operation name="SendResults">
@@ -493,6 +550,9 @@
         </port>
         <port name="TestBulkUploadPort" binding="tns:TestBulkUploadBinding">
             <soap:address location="http://LIS1:4567/aqualis/TestBulkUploadPort"/>
+        </port>
+        <port name="PoolSearch" binding="tns:PoolSearchBinding">
+            <soap:address location="http://LIS1:4567/aqualis/PoolSearch"/>
         </port>
     </service>
 </definitions>
