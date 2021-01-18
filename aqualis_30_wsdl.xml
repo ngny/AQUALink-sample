@@ -1,558 +1,468 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-             xmlns:xs="http://www.w3.org/2001/XMLSchema"
-             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
-             xmlns:tns="http://www.ngnydevices.tech/aqualis/3-0"
+<definitions
+	xmlns="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:tns="http://www.ngnydevices.tech/aqualis/3-0"
              targetNamespace="http://www.ngnydevices.tech/aqualis/3-0">
-    <types>
-        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                   xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
-                   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-                   xmlns:tns="http://www.ngnydevices.tech/aqualis/3-0"
+	<types>
+		<xs:schema
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+			xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+			xmlns:tns="http://www.ngnydevices.tech/aqualis/3-0"
                    targetNamespace="http://www.ngnydevices.tech/aqualis/3-0" elementFormDefault="qualified">
-
-
-            <xs:element name="Location">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="RackId" type="xs:string" minOccurs="1"/>
-                        <xs:element name="HoleId" type="xs:string" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="VisualAnalysis">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Width" type="xs:double" minOccurs="1"/>
-                        <xs:element name="Height" type="xs:double" minOccurs="1"/>
-                        <xs:element name="VolumeEstimation" type="xs:double" minOccurs="1"/>
-                        <xs:element name="CapType" type="xs:string" minOccurs="1"/>
-                        <xs:element name="HValue" type="xs:string" minOccurs="1"/>
-                        <xs:element name="IValue" type="xs:string" minOccurs="1"/>
-                        <xs:element name="LValue" type="xs:string" minOccurs="1"/>
-                        <xs:element name="PictureUrl" type="xs:string" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="BulkPrimaryTube">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="PrimaryTube">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                        <xs:element ref="tns:Location" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="Tube">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                        <xs:element ref="tns:Location" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:simpleType name="ProcessedPrimaryTubeStatus">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Success"/>
-                    <xs:enumeration value="Failure"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-
-            <xs:element name="ProcessedPrimaryTube">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                        <xs:element name="Status" type="tns:ProcessedPrimaryTubeStatus" minOccurs="1"/>
-                        <xs:element ref="tns:Location" minOccurs="1"/>
-                        <xs:element ref="tns:VisualAnalysis" minOccurs="0"/>
-                        <xs:element name="Comment" type="xs:string" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:simpleType name="TestStatus">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Pending"/>
-                    <xs:enumeration value="Done"/>
-                    <xs:enumeration value="Validated"/>
-                    <xs:enumeration value="Cancel"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-
-            <xs:element name="Tests">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Test" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                    <xs:element name="Status" type="tns:TestStatus" minOccurs="1"/>
-                                    <xs:element name="SecondaryTubeId" type="xs:string"/>
-                                    <xs:element name="SecondaryDestination" type="xs:string"/>
-                                    <xs:element name="SecondaryName" type="xs:string"/>
-                                    <xs:element name="SecondaryVoluL" type="xs:double"/>
-                                
-                                  
-                                  
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:simpleType name="TestResultsStatus">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Success"/>
-                    <xs:enumeration value="Failure"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-
-            <xs:element name="TestResults">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Test" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                    <xs:element name="Status" type="tns:TestResultsStatus" minOccurs="1"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:simpleType name="SecondaryTubeStatus">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Success"/>
-                    <xs:enumeration value="AspirationError"/>
-                    <xs:enumeration value="TubeGenerationError"/>
-                    <xs:enumeration value="FamilyCancelError"/>
-                    <xs:enumeration value="LisError"/>
-                    <xs:enumeration value="DispenseError"/>
-                    <xs:enumeration value="PipettorStateError"/>
-                    <xs:enumeration value="NoResult"/>
-                    <xs:enumeration value="AliquotePending"/>
-                    <xs:enumeration value="DiameterTooHighForOutputHole"/>
-                    <xs:enumeration value="TubeCheckFailure"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-
-            <xs:element name="RelatedTests">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Test" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="GeneratedSecondaryTubes">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="SecondaryTube" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="Id" type="xs:string" minOccurs="1"/>
-                                    <xs:element ref="tns:Location" minOccurs="1"/>
-                                    <xs:element name="Comment" type="xs:string"/>
-                                    <xs:element name="VolumeMl" type="xs:double"/>
-                                    <xs:element name="Status" type="tns:SecondaryTubeStatus" minOccurs="1"/>
-                                    <xs:element ref="tns:RelatedTests" minOccurs="0"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="GetTests">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="ClientId" type="xs:string" minOccurs="1"/>
-                        <xs:element ref="tns:PrimaryTube" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="ConveyorInitialization">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="ClientId" type="xs:string" minOccurs="1"/>
-                        <xs:element ref="tns:Tube" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="SendResults">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="ClientId" type="xs:string" minOccurs="1"/>
-                        <xs:element ref="tns:ProcessedPrimaryTube" minOccurs="1"/>
-                        <xs:element ref="tns:TestResults" minOccurs="1"/>
-                        <xs:element ref="tns:GeneratedSecondaryTubes" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="CustomFields">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="CF1" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF2" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF3" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF4" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF5" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF6" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF7" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF8" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF9" type="xs:string" minOccurs="0"/>
-                        <xs:element name="CF10" type="xs:string" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="Order">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Status" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Priority" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Id" type="xs:string" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="Patient">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Id" type="xs:string" minOccurs="0"/>
-                        <xs:element name="FamilyName" type="xs:string" minOccurs="0"/>
-                        <xs:element name="FirstName" type="xs:string" minOccurs="0"/>
-                        <xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Sex" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Physician" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Type" type="xs:string" minOccurs="0"/>
-                        <xs:element name="BirthDate" type="xs:string" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="SampleSource">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="ExtractionCenter" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Service" type="xs:string" minOccurs="0"/>
-                        <xs:element name="Section" type="xs:string" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:simpleType name="GetTestsResponseResult">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Success"/>
-                    <xs:enumeration value="PrimaryTubeNotFound"/>
-                    <xs:enumeration value="InternalError"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-
-            <xs:element name="GetTestsResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Result" type="tns:GetTestsResponseResult" minOccurs="1"/>
-                        <xs:element ref="tns:PrimaryTube" minOccurs="1"/>
-                        <xs:element ref="tns:Order" minOccurs="0"/>
-                        <xs:element ref="tns:SampleSource" minOccurs="0"/>
-                        <xs:element ref="tns:Patient" minOccurs="0"/>
-                        <xs:element ref="tns:CustomFields" minOccurs="0"/>
-                        <xs:element ref="tns:Tests" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-            <xs:element name="BulkOrderResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Result" type="xs:string"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="BulkOrder">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Sample" maxOccurs="unbounded">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element ref="tns:BulkPrimaryTube" minOccurs="1"/>
-                                    <xs:element ref="tns:Tests" minOccurs="1"/>
-                                    <xs:element ref="tns:CustomFields" minOccurs="0"/>
-                                    <xs:element ref="tns:Patient" minOccurs="0"/>
-                                    <xs:element ref="tns:SampleSource" minOccurs="0"/>
-                                    <xs:element ref="tns:Order" minOccurs="0"/>
-                                </xs:sequence>
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:simpleType name="ResultType">
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="Success"/>
-                    <xs:enumeration value="InternalError"/>
-                </xs:restriction>
-            </xs:simpleType>
-
-            <xs:element name="SendResultsResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Result" type="tns:ResultType" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="ConveyorInitializationResponse">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="Result" type="xs:string" minOccurs="1"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-        </xs:schema>
-    </types>
-
-    <message name="GetTestsRequestMsg">
-        <part name="body" element="tns:GetTests"/>
-    </message>
-    <message name="GetTestsResponseMsg">
-        <part name="body" element="tns:GetTestsResponse"/>
-    </message>
-
-    <message name="UploadRequestMsg">
-        <part name="body" element="tns:BulkOrder"/>
-    </message>
-    <message name="UploadResponseMsg">
-        <part name="body" element="tns:BulkOrderResponse"/>
-    </message>
-
-
-    <message name="SendResultsRequestMsg">
-        <part name="body" element="tns:SendResults"/>
-    </message>
-    <message name="SendResultsResponseMsg">
-        <part name="body" element="tns:SendResultsResponse"/>
-    </message>
-
-
-    <message name="ConveyorInitializationRequestMsg">
-        <part name="body" element="tns:ConveyorInitialization"/>
-    </message>
-    <message name="ConveyorInitializationResponseMsg">
-        <part name="body" element="tns:ConveyorInitializationResponse"/>
-    </message>
-
-
-    <portType name="HomingPortType">
-        <operation name="ConveyorInitialization">
-            <input message="tns:ConveyorInitializationRequestMsg"/>
-            <output message="tns:ConveyorInitializationResponseMsg"/>
-        </operation>
-    </portType>
-
-
-    <portType name="TestServicePortType">
-        <operation name="GetTests">
-            <input message="tns:GetTestsRequestMsg"/>
-            <output message="tns:GetTestsResponseMsg"/>
-        </operation>
-    </portType>
-    <portType name="ResultServicePortType">
-        <operation name="SendResults">
-            <input message="tns:SendResultsRequestMsg"/>
-            <output message="tns:SendResultsResponseMsg"/>
-        </operation>
-    </portType>
-
-    <binding name="TestServiceBinding" type="tns:TestServicePortType">
-        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <operation name="GetTests">
-            <soap:operation soapAction="http://www.ngnydevices.tech/GetTests"/>
-            <input>
-                <soap:body use="literal"/>
-            </input>
-            <output>
-                <soap:body use="literal"/>
-            </output>
-        </operation>
-    </binding>
-
-
-    <binding name="HomingBinding" type="tns:HomingPortType">
-        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <operation name="ConveyorInitialization">
-            <soap:operation soapAction="http://www.ngnydevices.tech/ConveyorInitialization"/>
-            <input>
-                <soap:body use="literal"/>
-            </input>
-            <output>
-                <soap:body use="literal"/>
-            </output>
-        </operation>
-    </binding>
-
-
-    <portType name="TestBulkUploadPortType">
-        <operation name="UploadTests">
-            <input message="tns:UploadRequestMsg"/>
-            <output message="tns:UploadResponseMsg"/>
-        </operation>
-    </portType>
-
-
-    <binding name="TestBulkUploadBinding" type="tns:TestBulkUploadPortType">
-        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <operation name="UploadTests">
-            <soap:operation soapAction="http://www.ngnydevices.tech/UploadTests"/>
-            <input>
-                <soap:body use="literal"/>
-            </input>
-            <output>
-                <soap:body use="literal"/>
-            </output>
-        </operation>
-    </binding>
-
-
+			<xs:element name="Location">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RackId" type="xs:string" minOccurs="1"/>
+						<xs:element name="HoleId" type="xs:string" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="VisualAnalysis">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Width" type="xs:double" minOccurs="1"/>
+						<xs:element name="Height" type="xs:double" minOccurs="1"/>
+						<xs:element name="VolumeEstimation" type="xs:double" minOccurs="1"/>
+						<xs:element name="CapType" type="xs:string" minOccurs="1"/>
+						<xs:element name="HValue" type="xs:string" minOccurs="1"/>
+						<xs:element name="IValue" type="xs:string" minOccurs="1"/>
+						<xs:element name="LValue" type="xs:string" minOccurs="1"/>
+						<xs:element name="PictureUrl" type="xs:string" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BulkPrimaryTube">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="xs:string" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PrimaryTube">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="xs:string" minOccurs="1"/>
+						<xs:element ref="tns:Location" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Tube">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="xs:string" minOccurs="1"/>
+						<xs:element ref="tns:Location" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="ProcessedPrimaryTubeStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success"/>
+					<xs:enumeration value="Failure"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="ProcessedPrimaryTube">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="xs:string" minOccurs="1"/>
+						<xs:element name="Status" type="tns:ProcessedPrimaryTubeStatus" minOccurs="1"/>
+						<xs:element ref="tns:Location" minOccurs="1"/>
+						<xs:element ref="tns:VisualAnalysis" minOccurs="0"/>
+						<xs:element name="Comment" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="TestStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Pending"/>
+					<xs:enumeration value="Done"/>
+					<xs:enumeration value="Validated"/>
+					<xs:enumeration value="Cancel"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="Tests">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Test" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="xs:string" minOccurs="1"/>
+									<xs:element name="Status" type="tns:TestStatus" minOccurs="1"/>
+									<xs:element name="SecondaryTubeId" type="xs:string"/>
+									<xs:element name="SecondaryDestination" type="xs:string"/>
+									<xs:element name="SecondaryName" type="xs:string"/>
+									<xs:element name="SecondaryVoluL" type="xs:double"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="TestResultsStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success"/>
+					<xs:enumeration value="Failure"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="TestResults">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Test" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="xs:string" minOccurs="1"/>
+									<xs:element name="Status" type="tns:TestResultsStatus" minOccurs="1"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="SecondaryTubeStatus">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success"/>
+					<xs:enumeration value="AspirationError"/>
+					<xs:enumeration value="TubeGenerationError"/>
+					<xs:enumeration value="FamilyCancelError"/>
+					<xs:enumeration value="LisError"/>
+					<xs:enumeration value="DispenseError"/>
+					<xs:enumeration value="PipettorStateError"/>
+					<xs:enumeration value="NoResult"/>
+					<xs:enumeration value="AliquotePending"/>
+					<xs:enumeration value="DiameterTooHighForOutputHole"/>
+					<xs:enumeration value="TubeCheckFailure"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="RelatedTests">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Test" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="xs:string" minOccurs="1"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GeneratedSecondaryTubes">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SecondaryTube" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Id" type="xs:string" minOccurs="1"/>
+									<xs:element ref="tns:Location" minOccurs="1"/>
+									<xs:element name="Comment" type="xs:string"/>
+									<xs:element name="VolumeMl" type="xs:double"/>
+									<xs:element name="Status" type="tns:SecondaryTubeStatus" minOccurs="1"/>
+									<xs:element ref="tns:RelatedTests" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="GetTests">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ClientId" type="xs:string" minOccurs="1"/>
+						<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConveyorInitialization">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ClientId" type="xs:string" minOccurs="1"/>
+						<xs:element ref="tns:Tube" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SendResults">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ClientId" type="xs:string" minOccurs="1"/>
+						<xs:element ref="tns:ProcessedPrimaryTube" minOccurs="1"/>
+						<xs:element ref="tns:TestResults" minOccurs="1"/>
+						<xs:element ref="tns:GeneratedSecondaryTubes" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CustomFields">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CF1" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF2" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF3" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF4" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF5" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF6" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF7" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF8" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF9" type="xs:string" minOccurs="0"/>
+						<xs:element name="CF10" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Order">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Status" type="xs:string" minOccurs="0"/>
+						<xs:element name="Priority" type="xs:string" minOccurs="0"/>
+						<xs:element name="Id" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Patient">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Id" type="xs:string" minOccurs="0"/>
+						<xs:element name="FamilyName" type="xs:string" minOccurs="0"/>
+						<xs:element name="FirstName" type="xs:string" minOccurs="0"/>
+						<xs:element name="MiddleName" type="xs:string" minOccurs="0"/>
+						<xs:element name="Sex" type="xs:string" minOccurs="0"/>
+						<xs:element name="Physician" type="xs:string" minOccurs="0"/>
+						<xs:element name="Type" type="xs:string" minOccurs="0"/>
+						<xs:element name="BirthDate" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SampleSource">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ExtractionCenter" type="xs:string" minOccurs="0"/>
+						<xs:element name="Service" type="xs:string" minOccurs="0"/>
+						<xs:element name="Section" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="GetTestsResponseResult">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success"/>
+					<xs:enumeration value="PrimaryTubeNotFound"/>
+					<xs:enumeration value="InternalError"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="GetTestsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Result" type="tns:GetTestsResponseResult" minOccurs="1"/>
+						<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
+						<xs:element ref="tns:Order" minOccurs="0"/>
+						<xs:element ref="tns:SampleSource" minOccurs="0"/>
+						<xs:element ref="tns:Patient" minOccurs="0"/>
+						<xs:element ref="tns:CustomFields" minOccurs="0"/>
+						<xs:element ref="tns:Tests" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BulkOrderResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Result" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="BulkOrder">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Sample" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="tns:BulkPrimaryTube" minOccurs="1"/>
+									<xs:element ref="tns:Tests" minOccurs="1"/>
+									<xs:element ref="tns:CustomFields" minOccurs="0"/>
+									<xs:element ref="tns:Patient" minOccurs="0"/>
+									<xs:element ref="tns:SampleSource" minOccurs="0"/>
+									<xs:element ref="tns:Order" minOccurs="0"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:simpleType name="ResultType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Success"/>
+					<xs:enumeration value="InternalError"/>
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="SendResultsResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Result" type="tns:ResultType" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ConveyorInitializationResponse">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Result" type="xs:string" minOccurs="1"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:schema>
+	</types>
+	<message name="GetTestsRequestMsg">
+		<part name="body" element="tns:GetTests"/>
+	</message>
+	<message name="GetTestsResponseMsg">
+		<part name="body" element="tns:GetTestsResponse"/>
+	</message>
+	<message name="UploadRequestMsg">
+		<part name="body" element="tns:BulkOrder"/>
+	</message>
+	<message name="UploadResponseMsg">
+		<part name="body" element="tns:BulkOrderResponse"/>
+	</message>
+	<message name="SendResultsRequestMsg">
+		<part name="body" element="tns:SendResults"/>
+	</message>
+	<message name="SendResultsResponseMsg">
+		<part name="body" element="tns:SendResultsResponse"/>
+	</message>
+	<message name="ConveyorInitializationRequestMsg">
+		<part name="body" element="tns:ConveyorInitialization"/>
+	</message>
+	<message name="ConveyorInitializationResponseMsg">
+		<part name="body" element="tns:ConveyorInitializationResponse"/>
+	</message>
+	<portType name="HomingPortType">
+		<operation name="ConveyorInitialization">
+			<input message="tns:ConveyorInitializationRequestMsg"/>
+			<output message="tns:ConveyorInitializationResponseMsg"/>
+		</operation>
+	</portType>
+	<portType name="TestServicePortType">
+		<operation name="GetTests">
+			<input message="tns:GetTestsRequestMsg"/>
+			<output message="tns:GetTestsResponseMsg"/>
+		</operation>
+	</portType>
+	<portType name="ResultServicePortType">
+		<operation name="SendResults">
+			<input message="tns:SendResultsRequestMsg"/>
+			<output message="tns:SendResultsResponseMsg"/>
+		</operation>
+	</portType>
+	<binding name="TestServiceBinding" type="tns:TestServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="GetTests">
+			<soap:operation soapAction="http://www.ngnydevices.tech/GetTests"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="HomingBinding" type="tns:HomingPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="ConveyorInitialization">
+			<soap:operation soapAction="http://www.ngnydevices.tech/ConveyorInitialization"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<portType name="TestBulkUploadPortType">
+		<operation name="UploadTests">
+			<input message="tns:UploadRequestMsg"/>
+			<output message="tns:UploadResponseMsg"/>
+		</operation>
+	</portType>
+	<binding name="TestBulkUploadBinding" type="tns:TestBulkUploadPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="UploadTests">
+			<soap:operation soapAction="http://www.ngnydevices.tech/UploadTests"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<xs:element name="PoolSearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
+				<xs:element ref="tns:PoolTube" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PoolSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PrimaryTube" type="xs:string"/>
+				<xs:element name="PoolTube" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
   
   
-     <xs:element name="PoolSearchResponse">
- 
-       
-       <xs:complexType>
-                    <xs:sequence>
-                        <xs:element ref="tns:PrimaryTube" minOccurs="1"/>
-                        <xs:element ref="tns:PoolTube" minOccurs="0"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
-
-            <xs:element name="PoolSearch">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element name="PrimaryTube" type="xs:string"/>
-                        <xs:element name="PoolTube" type="xs:string"/>
-                    </xs:sequence>
-                </xs:complexType>
-            </xs:element>
-
   
-      <message name="SearchPoolRequestMsg">
-        <part name="body" element="tns:PoolSearch"/>
-    </message>
-    <message name="SearchPoolResponseMsg">
-        <part name="body" element="tns:PoolSearchResponse"/>
-    </message>
-
-
-  
-    <portType name="PoolSearchPortType">
-        <operation name="SearchPoolTubes">
-            <input message="tns:SearchPoolRequestMsg"/>
-            <output message="tns:SearchPoolResponseMsg"/>
-        </operation>
-    </portType>
-
-
-      <binding name="PoolSearchBinding" type="tns:PoolSearchPortType">
-        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <operation name="SearchPoolTubes">
-            <soap:operation soapAction="http://www.ngnydevices.tech/SearchPoolTubes"/>
-            <input>
-                <soap:body use="literal"/>
-            </input>
-            <output>
-                <soap:body use="literal"/>
-            </output>
-        </operation>
-    </binding>
-
-
-  
-
-    <binding name="ResultServiceBinding" type="tns:ResultServicePortType">
-        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-        <operation name="SendResults">
-            <soap:operation soapAction="http://www.ngnydevices.tech/SendResults"/>
-            <input>
-                <soap:body use="literal"/>
-            </input>
-            <output>
-                <soap:body use="literal"/>
-            </output>
-        </operation>
-
-
-    </binding>
-
-    <service name="TestService">
-        <port name="TestServicePort" binding="tns:TestServiceBinding">
-            <soap:address location="http://LIS1:4567/aqualis/TestPort"/>
-        </port>
-        <port name="HomingPort" binding="tns:HomingBinding">
-            <soap:address location="http://LIS1:4567/aqualis/HomingPort"/>
-        </port>
-        <port name="ResultServicePort" binding="tns:ResultServiceBinding">
-            <soap:address location="http://LIS1:4567/aqualis/ResultPort"/>
-        </port>
-        <port name="TestBulkUploadPort" binding="tns:TestBulkUploadBinding">
-            <soap:address location="http://LIS1:4567/aqualis/TestBulkUploadPort"/>
-        </port>
-        <port name="PoolSearch" binding="tns:PoolSearchBinding">
-            <soap:address location="http://LIS1:4567/aqualis/PoolSearch"/>
-        </port>
-    </service>
+	<message name="SearchPoolRequestMsg">
+		<part name="body" element="tns:PoolSearchRequest"/>
+	</message>
+	<message name="SearchPoolResponseMsg">
+		<part name="body" element="tns:PoolSearchResponse"/>
+	</message>
+	<portType name="PoolSearchPortType">
+		<operation name="SearchPoolTubes">
+			<input message="tns:SearchPoolRequestMsg"/>
+			<output message="tns:SearchPoolResponseMsg"/>
+		</operation>
+	</portType>
+	<binding name="PoolSearchBinding" type="tns:PoolSearchPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SearchPoolTubes">
+			<soap:operation soapAction="http://www.ngnydevices.tech/SearchPoolTubes"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<binding name="ResultServiceBinding" type="tns:ResultServicePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="SendResults">
+			<soap:operation soapAction="http://www.ngnydevices.tech/SendResults"/>
+			<input>
+				<soap:body use="literal"/>
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="TestService">
+		<port name="TestServicePort" binding="tns:TestServiceBinding">
+			<soap:address location="http://LIS1:4567/aqualis/TestPort"/>
+		</port>
+		<port name="HomingPort" binding="tns:HomingBinding">
+			<soap:address location="http://LIS1:4567/aqualis/HomingPort"/>
+		</port>
+		<port name="ResultServicePort" binding="tns:ResultServiceBinding">
+			<soap:address location="http://LIS1:4567/aqualis/ResultPort"/>
+		</port>
+		<port name="TestBulkUploadPort" binding="tns:TestBulkUploadBinding">
+			<soap:address location="http://LIS1:4567/aqualis/TestBulkUploadPort"/>
+		</port>
+		<port name="PoolSearch" binding="tns:PoolSearchBinding">
+			<soap:address location="http://LIS1:4567/aqualis/PoolSearch"/>
+		</port>
+	</service>
 </definitions>
