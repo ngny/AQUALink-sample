@@ -22,16 +22,23 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
-			
+
 			<xs:element name="PoolSearchResponse">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
-				<xs:element ref="tns:PoolTube" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="PoolSearchRequest">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Tube" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="PrimaryTube" type="xs:string" minOccurs="1"/>
+									<xs:element name="PoolTube" type="xs:string" minOccurs="1"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+
+			<xs:element name="PoolSearchRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="PrimaryTube" type="xs:string"/>
