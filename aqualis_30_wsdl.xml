@@ -22,6 +22,25 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			
+			<xs:element name="PoolSearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
+				<xs:element ref="tns:PoolTube" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PoolSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="PrimaryTube" type="xs:string"/>
+				<xs:element name="PoolTube" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  
+			
 			<xs:element name="VisualAnalysis">
 				<xs:complexType>
 					<xs:sequence>
@@ -393,23 +412,7 @@
 			</output>
 		</operation>
 	</binding>
-	<xs:element name="PoolSearchResponse">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="tns:PrimaryTube" minOccurs="1"/>
-				<xs:element ref="tns:PoolTube" minOccurs="0"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="PoolSearchRequest">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="PrimaryTube" type="xs:string"/>
-				<xs:element name="PoolTube" type="xs:string"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-  
+	
   
   
 	<message name="SearchPoolRequestMsg">
