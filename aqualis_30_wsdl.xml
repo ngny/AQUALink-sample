@@ -19,6 +19,7 @@
 					<xs:sequence>
 						<xs:element name="RackId" type="xs:string" minOccurs="1"/>
 						<xs:element name="HoleId" type="xs:string" minOccurs="1"/>
+						<xs:element name="destinationName" type="xs:string"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
