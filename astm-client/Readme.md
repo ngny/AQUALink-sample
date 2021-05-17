@@ -37,21 +37,32 @@ In the P record type, we extract also the following values:
 
 
 
-## Send resuls command
+## Send results command
 
 ```
 1H|\^&|||A9000P|||||LIS||P|LIS2-A2|
 P|1|$patientId|||^^||19000101||||||||||||||||||
-O|2|$sampleID^$rackId^$holeId||^^^PRIMARY_T\^^^VELO|R||||||||||||||||||||F
+O|2|$sampleID^$rackId^$holeId||^^^PRIMARY_T\^^^test1|R||||||||||||||||||||F
 R|3|^^^PRIMARY_T^^^^|#VELOCIDADES 1_A3|||||SUCCESS||||20200715122300
-R|4|^^^VELO^^^^|OK|||||F||||20200715122300
+R|4|^^^test1^^^^|OK|||||F||||20200715122300
 L|1|N
 ```
 
 The P record is only sent if the aqualink service has not been rebooted and therefore lost the volatile PII data.
 
+A O record type is sent for the primary tube specifying:
 
+* specimenId = primary tube sample id
+* primary tube output rack id
+* primary tube output rack hole label
+* a list of the tests being sent (using *PRIMARY_T* for the primary tube destination).
 
+There is a R record that stores the primary tube destination (PRIMARY_T). In index 1 (starting at 0), there is the location (rack_hole) and in index 6, SUCCESS or FAILURE for the primary tube. Finally the date is also added.
+
+For the rest of real tests requested, the R record type is also used with flags=F, test name equal to ^^^testname^^^and the status OK or ERROR. 
+
+Finally for secondary tubes, also a R result type is used, with name ^^^SECONDARY_T_$index^^^  where index is the aliquote index. The status represents in this case the output rackId_holeId. 
+ 
 
 ## Examples
 
