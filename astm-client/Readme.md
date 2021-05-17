@@ -1,5 +1,15 @@
 ## Query tube request
 
+
+* function(sampleId, rackId, holeId, senderId=A9000P, receiverId=LIS)
+* 
+```
+H|\^&|||$senderId|||||$receiverId||P|LIS2-A2|
+Q|1|^$sampleId^$rackId^$holeID||||||||||O
+L|1|N<CR><CR>
+```
+
+
 ## Query response
 
 ## Send resuls command
