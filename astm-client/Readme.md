@@ -12,6 +12,31 @@ L|1|N<CR><CR>
 
 ## Query response
 
+```
+1H|\^&|||LIS|||||A9000P||P|1|
+P|1|$patientId|||$patientLastName^$patientFirstName||$bithDate|$sex|||||$phisician||||||||||||
+O|1|$specimenId||^^^$test1\^^^$test2\^^^$test3|R||||||N||||||||||||||Q
+L|1|F|
+```
+
+In the P record type, we extract also the following values:
+
+* index 12: Custom field 1
+* index 15: Custom field 2
+* index 16: Custom field 3
+* index 17: Custom field 4
+* index 18: Custom field 5
+* index 19: Custom field 6
+* index 21: Custom field 7
+* index 21: Custom field 8
+* index 22: Custom field 0
+* index 23: Custom field 10
+* index 26: Extraction center 
+* index 33: Service name
+* index 34: Section
+
+
+
 ## Send resuls command
 
 ## Examples
