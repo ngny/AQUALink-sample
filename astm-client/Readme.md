@@ -39,6 +39,20 @@ In the P record type, we extract also the following values:
 
 ## Send resuls command
 
+```
+1H|\^&|||A9000P|||||LIS||P|LIS2-A2|
+P|1|$patientId|||^^||19000101||||||||||||||||||
+O|2|$sampleID^$rackId^$holeId||^^^PRIMARY_T\^^^VELO|R||||||||||||||||||||F
+R|3|^^^PRIMARY_T^^^^|#VELOCIDADES 1_A3|||||SUCCESS||||20200715122300
+R|4|^^^VELO^^^^|OK|||||F||||20200715122300
+L|1|N
+```
+
+The P record is only sent if the aqualink service has not been rebooted and therefore lost the volatile PII data.
+
+
+
+
 ## Examples
 
 ### Querying sample tube
