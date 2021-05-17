@@ -1,12 +1,12 @@
-# Query tube request
+## Query tube request
 
-# Query response
+## Query response
 
-# Send resuls command
+## Send resuls command
 
-# Examples
+## Examples
 
-## Querying sample tube
+### Querying sample tube
 
 ```
 <STX>
@@ -16,7 +16,7 @@ L|1|N<CR><CR>
 <ETX>08<CR><LF>
 ```
 
-## LIS returning the list of sample tubes
+### LIS returning the list of sample tubes
 
 ```
 <STX>
@@ -28,7 +28,7 @@ L|1|N<CR><CR>
 ```
 
 
-## Sending results
+### Sending results
 
 ```
 <STX>
@@ -45,7 +45,7 @@ L|1|N<CR><CR>
 ```
 
 
-# Install instructions for sample server
+## Install instructions for sample server
 
 ```
 pip3 install astm
