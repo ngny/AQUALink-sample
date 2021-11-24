@@ -1,0 +1,169 @@
+{
+  "routingDestinations": [
+    {
+      "tests": [],
+      "destination": {
+        "decap": false,
+        "code": "BIO",
+        "updated_at": 1519845630867,
+        "color": "#78c8dc",
+        "name": "Cadena",
+        "created_at": 1517421005253,
+        "id": 45,
+        "las": false
+      },
+      "replacingAliquote": false,
+      "completed": false
+    }
+  ],
+  "input": {
+    "mode": "BIO",
+    "holeLabel": "",
+    "executionType": "Normal",
+    "host": "aqua7026",
+    "source": "Manual",
+    "primaryTube": "14997254",
+    "inputRack": "",
+    "referenceCode": "14997254",
+    "hardware": "AQUA 8009",
+    "aquaJob": 0
+  },
+  "tubeContainers": [],
+  "tests": [
+    "Z02572"
+  ],
+  "pastDestinations": [],
+  "aliquotes": [
+    {
+      "volume": 0.7,
+      "maximumAspiration": false,
+      "tests": [
+        {
+          "testCode": "Z02572",
+          "middlewareTestId": 5216
+        }
+      ],
+      "secondaryTube": {
+        "code": "BIO",
+        "prefix": "303",
+        "label_module": "LBL-BIO",
+        "dead_vol": 0,
+        "created_at": 1517421005012,
+        "min_vol": 0.7,
+        "microplate": false,
+        "destination_name": "SUBC",
+        "recap": false,
+        "suffix": "",
+        "priority": 1,
+        "mandatory": true,
+        "updated_at": 1528977151148,
+        "name": "018 SUBC CLINIC",
+        "max_aspiration": false,
+        "tube_container": "TC-BIO",
+        "id": 27
+      },
+      "destination": {
+        "decap": false,
+        "code": "BIO",
+        "updated_at": 1519845630404,
+        "color": "#5d2f78",
+        "name": "SUBC",
+        "created_at": 1517421005157,
+        "id": 16,
+        "las": false
+      },
+      "aliquoteIndex": 0,
+      "microtube": false,
+      "volumeDescription": "Secondary tube:018 SUBC CLINIC minVolume:0.700 deadVolume:0.000\nvolume TEST: Z02572 => 0.000\ntotal volume:0.000\ntotal volume  secondaryTube.minVolume => \n using secondaryTube.minVolume + deadVolume\n",
+      "state": "Pending",
+      "localIndex": 0,
+      "secondaryTubeCode": "30397254",
+      "labelCode": "m m\nJ\nH 100\nP3.0\nS l1;0,0,40,42,25\nO R\nT 0,10,0,5,pt10;303\nT 1,6,0,5,pt12;97254\nB 7,38,90,2OF5INTERLEAVED,13,0.25,2.5;30397254\nT 3,35,90,5,pt8;018 SUBC CLINIC\nT 1,40,0,5,pt6;1/1\nT 1,37,0,5,pt6;BIO / -\nT 23,25,90,5,pt5;16/07/2018 23:40:46\nT 21,40,90,5,pt4;#HIST:\nT 23,40,90,5,pt6;aqua7026\nA 1\n\n"
+    }
+  ],
+  "testHistory": [
+    {
+      "tests": [
+        {
+          "s": "Pending",
+          "c": "Z02572"
+        }
+      ],
+      "requested_by": "aqua7026",
+      "updated_at": 1531777246497,
+      "lis": "AquaLIS_V12",
+      "created_at": 1531777246497,
+      "tube_code": "14997254",
+      "id": 4196,
+      "type": "BeforeLogic"
+    },
+    {
+      "tests": [
+        {
+          "s": "Pending",
+          "c": "Z02572"
+        }
+      ],
+      "requested_by": "aqua7026",
+      "updated_at": 1531777246496,
+      "lis": "AquaLIS_V12",
+      "created_at": 1531777246496,
+      "tube_code": "14997254",
+      "id": 4195,
+      "type": "MergedWithPrevious"
+    },
+    {
+      "tests": [
+        {
+          "s": "Pending",
+          "c": "Z02572"
+        }
+      ],
+      "requested_by": "aqua7026",
+      "updated_at": 1531777246494,
+      "lis": "AquaLIS_V12",
+      "created_at": 1531777246494,
+      "tube_code": "14997254",
+      "id": 4194,
+      "type": "ReceivedFromLis"
+    },
+    {
+      "tests": [],
+      "requested_by": "aqua7026",
+      "updated_at": 1531777246394,
+      "lis": "AquaLIS_V12",
+      "created_at": 1531777246394,
+      "tube_code": "14997254",
+      "id": 4193,
+      "type": "PreviousStatus"
+    }
+  ],
+  "middlewareTube": {
+    "extraction_center": "",
+    "updated_at": 1531777246461,
+    "patient_type": "",
+    "last_task_id": 0,
+    "valid_test_counter": 0,
+    "tube_id": 162690,
+    "created_at": 1531777246461,
+    "tube_code": "14997254",
+    "patient_service": "",
+    "section": "",
+    "state": "Waiting",
+    "id": 43234
+  },
+  "primaryClassification": {
+    "destination": {
+      "decap": false,
+      "code": "BIO",
+      "updated_at": 1519845630867,
+      "color": "#78c8dc",
+      "name": "Cadena",
+      "created_at": 1517421005253,
+      "id": 45,
+      "las": false
+    },
+    "mapType": "Success",
+    "tubeCode": "14997254"
+  }
+}
