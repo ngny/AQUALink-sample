@@ -225,6 +225,21 @@
 				</xs:restriction>
 			</xs:simpleType>
 
+			<xs:simpleType name="RequesterType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Instrument"/>
+					<xs:enumeration value="ManualStation"/>
+				</xs:restriction>
+			</xs:simpleType>
+
+			<xs:simpleType name="SampleType">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Primary"/>
+					<xs:enumeration value="Secondary"/>
+					<xs:enumeration value="Microtube"/>
+				</xs:restriction>
+			</xs:simpleType>
+
 
 			<xs:element name="SendEvent">
 				<xs:complexType>
@@ -237,14 +252,15 @@
 						<xs:element ref="tns:Location" minOccurs="0"/>
 						<xs:element name="Result" type="tns:EventResult" minOccurs="1"/>
 						<xs:element name="Base64Image" type="xs:string" minOccurs="0"/>
-						<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
-						<xs:element name="errorDescriptionEng" type="xs:string" minOccurs="0"/>
-						<xs:element name="errorDescriptionLocale" type="xs:string" minOccurs="0"/>
-						<xs:element name="primarySampleId" type="xs:string" minOccurs="0"/>
-						<xs:element name="centrifugeProgram" type="xs:string" minOccurs="0"/>
-						<xs:element name="centrifugeSeconds" type="xs:integer" minOccurs="0"/>
-						<xs:element name="volume" type="xs:double" minOccurs="0"/>
-
+						<xs:element name="ErrorCode" type="xs:string" minOccurs="0"/>
+						<xs:element name="ErrorDescriptionEng" type="xs:string" minOccurs="0"/>
+						<xs:element name="ErrorDescriptionLocale" type="xs:string" minOccurs="0"/>
+						<xs:element name="PrimarySampleId" type="xs:string" minOccurs="0"/>
+						<xs:element name="CentrifugeProgram" type="xs:string" minOccurs="0"/>
+						<xs:element name="CentrifugeSeconds" type="xs:integer" minOccurs="0"/>
+						<xs:element name="Volume" type="xs:double" minOccurs="0"/>
+						<xs:element name="Requester" type="tns:RequesterType" minOccurs="0"/>
+						<xs:element name="SampleType" type="tns:SampleType" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
