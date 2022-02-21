@@ -18,13 +18,41 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:simpleType name="CapStatusEnum">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="WithCap"/>
+					<xs:enumeration value="WithoutCap"/>
+				</xs:restriction>
+			</xs:simpleType>
+
+
+			<xs:simpleType name="SizeCategoryEnum">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Tall"/>
+					<xs:enumeration value="Short"/>
+				</xs:restriction>
+			</xs:simpleType>
+
+			<xs:simpleType name="WidthCategoryEnum">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Wide"/>
+					<xs:enumeration value="Narrow"/>
+				</xs:restriction>
+			</xs:simpleType>
+
+
 			<xs:element name="VisualAnalysis">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element name="ColorGreen" type="xs:double" minOccurs="0"/>
+						<xs:element name="ColorRed" type="xs:double" minOccurs="0"/>
+						<xs:element name="ColorBlue" type="xs:double" minOccurs="0"/>
 						<xs:element name="Width" type="xs:double" minOccurs="1"/>
 						<xs:element name="Height" type="xs:double" minOccurs="1"/>
-						<xs:element name="VolumeEstimation" type="xs:double" minOccurs="1"/>
-						<xs:element name="CapType" type="xs:string" minOccurs="1"/>
+						<xs:element name="CapLabel" type="xs:string" minOccurs="0"/>
+						<xs:element name="CapStatus"  type="tns:CapStatusEnum"  minOccurs="1"/>
+						<xs:element name="SizeCategory"  type="tns:SizeCategoryEnum"  minOccurs="1"/>
+						<xs:element name="WidthCategory"  type="tns:WidthCategoryEnum"  minOccurs="1"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -64,7 +92,6 @@
 						<xs:element name="SampleId" type="xs:string" minOccurs="1"/>
 						<xs:element name="Status" type="tns:ProcessedPrimarySampleStatus" minOccurs="1"/>
 						<xs:element ref="tns:Location" minOccurs="1"/>
-						<xs:element ref="tns:VisualAnalysis" minOccurs="0"/>
 						<xs:element name="Comment" type="xs:string" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
@@ -169,7 +196,7 @@
 									<xs:element name="SampleId" type="xs:string" minOccurs="1"/>
 									<xs:element ref="tns:Location" minOccurs="1"/>
 									<xs:element name="Comment" type="xs:string"/>
-									<xs:element name="VolumeMl" type="xs:double"/>
+									<xs:element name="VolumeUl" type="xs:double"/>
 									<xs:element name="Status" type="tns:SecondarySampleStatus" minOccurs="1"/>
 									<xs:element ref="tns:RelatedTests" minOccurs="0"/>
 								</xs:sequence>
@@ -258,9 +285,10 @@
 						<xs:element name="PrimarySampleId" type="xs:string" minOccurs="0"/>
 						<xs:element name="CentrifugeProgram" type="xs:string" minOccurs="0"/>
 						<xs:element name="CentrifugeSeconds" type="xs:integer" minOccurs="0"/>
-						<xs:element name="Volume" type="xs:double" minOccurs="0"/>
+						<xs:element name="VolumeUl" type="xs:double" minOccurs="0"/>
 						<xs:element name="Requester" type="tns:RequesterType" minOccurs="0"/>
 						<xs:element name="SampleType" type="tns:SampleType" minOccurs="0"/>
+						<xs:element ref="tns:VisualAnalysis" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
