@@ -57,6 +57,19 @@
 				</xs:complexType>
 			</xs:element>
 
+			<xs:element name="TubeContainers">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="TubeContainer" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Name" type="xs:string" minOccurs="1"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 
 
 			<xs:element name="PrimarySample">
@@ -64,6 +77,7 @@
 					<xs:sequence>
 						<xs:element name="SampleId" type="xs:string" minOccurs="1"/>
 						<xs:element ref="tns:Location" minOccurs="1"/>
+						<xs:element ref="tns:TubeContainers" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -85,6 +99,13 @@
 				</xs:restriction>
 			</xs:simpleType>
 
+
+			<xs:simpleType name="OrderPriority">
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Routine"/>
+					<xs:enumeration value="Urgent"/>
+				</xs:restriction>
+			</xs:simpleType>
 
 			<xs:element name="ProcessedPrimarySample">
 				<xs:complexType>
@@ -211,6 +232,7 @@
 			<xs:element name="QuerySample">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element name="Timestamp" type="xs:dateTime" minOccurs="1"/>
 						<xs:element name="ClientId" type="xs:string" minOccurs="1"/>
 						<xs:element ref="tns:PrimarySample" minOccurs="1"/>
 					</xs:sequence>
@@ -221,6 +243,7 @@
 			<xs:element name="SendResults">
 				<xs:complexType>
 					<xs:sequence>
+						<xs:element name="Timestamp" type="xs:dateTime" minOccurs="1"/>
 						<xs:element name="ClientId" type="xs:string" minOccurs="1"/>
 						<xs:element ref="tns:ProcessedPrimarySample" minOccurs="1"/>
 						<xs:element ref="tns:TestResults" minOccurs="1"/>
@@ -316,7 +339,7 @@
 					<xs:sequence>
 						<xs:element name="OrderId" type="xs:string" minOccurs="0"/>
 						<xs:element name="Status" type="xs:string" minOccurs="0"/>
-						<xs:element name="Priority" type="xs:string" minOccurs="0"/>
+						<xs:element name="Priority" type="tns:OrderPriority" minOccurs="0"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
